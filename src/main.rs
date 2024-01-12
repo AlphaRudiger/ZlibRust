@@ -2,6 +2,7 @@ use rustpng::{zlib, inflate::TreeNode, bitreader::BitReader};
 
 #[allow(unused_imports)]
 
+// https://blog.za3k.com/understanding-gzip-2/
 fn main() {
 
     let mut tree = TreeNode::default();

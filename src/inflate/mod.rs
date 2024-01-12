@@ -6,6 +6,7 @@ use self::lookup::LEN_TABLE;
 
 mod lookup;
 
+
 pub fn inflate_block(out_buffer: &mut Vec<u8>, br: &mut BitReader) -> Result<bool> {
     let last = br.read_bit();
     let btype = br.read_bits_msb(2);
