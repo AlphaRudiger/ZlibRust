@@ -15,7 +15,7 @@ thiserror = "1.0.56"
 # features = ["dynamic_linking"]
 
 [profile.dev]
-opt-level = 1
+opt-level = 0
 
 [profile.dev.package."*"]
 opt-level = 3

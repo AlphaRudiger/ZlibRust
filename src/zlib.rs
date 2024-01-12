@@ -12,6 +12,12 @@ pub fn decode_zlib_file(p: &str) -> Result<Vec<u8>> {
     if br.available() != 4 {
         return Err(ZlibError::ZlibStreamNotConsumed { left: br.available() - 4 }.into());
     }
+    // print!("result text: ");
+    // for i in &out_buffer {
+    //     print!("{}", *i as char);
+    // }
+    // print!(";");
+    // println!();
     adler32(&out_buffer, br.read_u32_msb())?;
     Ok(out_buffer)
 }

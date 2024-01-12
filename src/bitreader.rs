@@ -28,6 +28,13 @@ impl BitReader {
         }
         r
     }
+    pub fn read_bits_msb(&mut self, amount: u8) -> u16 {
+        let mut r = 0;
+        for i in 0..amount {
+            r |= (self.read_bit() as u16) << i;
+        }
+        r
+    }
     pub fn read_byte(&mut self) -> u8 {
         let r = unsafe {
             // println!("{}", self.index);
