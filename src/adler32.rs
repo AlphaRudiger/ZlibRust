@@ -5,7 +5,7 @@ use crate::zlib_errors::ZlibError;
 fn update_adler32(adler: u32, buf: &[u8]) -> u32 {
     const BASE: u32 = 65521;
     let mut s1 = adler & 0xffff;
-    let mut s2 = (adler >> 16) & 0xffff;
+    let mut s2 = adler >> 16;
 
     for v in buf {
         s1 = (s1 + *v as u32) % BASE;
